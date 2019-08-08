@@ -1,0 +1,3 @@
+[submodule "src/person_re_ranking"]
+	path = src/person_re_ranking
+	url = https://github.com/InnovArul/person_re_ranking
