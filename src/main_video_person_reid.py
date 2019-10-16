@@ -49,7 +49,7 @@ parser.add_argument('--start-epoch', default=0, type=int,
                     help="manual epoch number (useful on restarts)")
 parser.add_argument('--data-selection', type=str,
                     default='random', help="random/evenly")
-parser.add_argument('--train-batch', default=28, type=int,
+parser.add_argument('--train-batch', default=32, type=int,
                     help="train batch size")
 parser.add_argument('--test-batch', default=1, type=int, help="has to be 1")
 parser.add_argument('--lr', '--learning-rate', default=0.0003, type=float,
@@ -202,7 +202,7 @@ def main():
 
     if args.evaluate:
         print("Evaluate only")
-        test(model, queryloader, galleryloader, args.pool, use_gpu)
+        test(model, queryloader, galleryloader, use_gpu)
         return
 
     start_time = time.time()
@@ -223,7 +223,7 @@ def main():
 
         if args.eval_step > 0 and (epoch+1) % args.eval_step == 0 or (epoch+1) == args.max_epoch:
             print("==> Test")
-            rank1 = test(model, queryloader, galleryloader, args.pool, use_gpu)
+            rank1 = test(model, queryloader, galleryloader, use_gpu)
             is_best = rank1 > best_rank1
             if is_best:
                 best_rank1 = rank1
@@ -280,7 +280,7 @@ def train(model, criterion_xent, criterion_htri, optimizer, trainloader, use_gpu
                                                               1, len(trainloader), losses.val, losses.avg))
 
 
-def test(model, queryloader, galleryloader, pool, use_gpu, ranks=[1, 5, 10, 20]):
+def test(model, queryloader, galleryloader, use_gpu, ranks=[1, 5, 10, 20]):
     model.eval()
 
     qf, q_pids, q_camids = [], [], []

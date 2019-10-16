@@ -74,7 +74,6 @@ class ResNet(nn.Module):
             + __file__
         )
         print("attention type", attention_types)
-        self.loss = loss
 
         # base network instantiation
         self.base = get_ResNet(net_type=net_type)
@@ -171,30 +170,6 @@ class ResNet(nn.Module):
 
         y = self.classifier(f)
         return self.return_values(f, y, attentions, self.training, return_attentions)
-
-
-# all seresnet50 models
-def ResNet50_TP(num_classes, **kwargs):
-    return ResNet(
-        num_classes,
-        net_type="resnet50",
-        is_baseline=True,
-        aggregation_type="tp",
-        **kwargs
-    )
-
-
-def ResNet50_TA(num_classes, **kwargs):
-    return ResNet(
-        num_classes, net_type="resnet50", is_baseline=True, aggregation_type="ta", **kwargs
-    )
-
-
-def ResNet50_RNN(num_classes, **kwargs):
-    return ResNet(
-        num_classes, net_type="resnet50", is_baseline=True, aggregation_type="rnn", **kwargs
-    )
-
 
 
 # all mutual correlation attention models

@@ -152,38 +152,8 @@ class SE_ResNet(nn.Module):
         return self.return_values(f, y, attentions, self.training, return_attentions)
 
 
-# all seresnet50 models
-def SE_ResNet50_TP(num_classes, **kwargs):
-    return SE_ResNet(
-        num_classes,
-        net_type="senet50",
-        aggregation_type="tp",
-        is_baseline=True,
-        **kwargs
-    )
 
-
-def SE_ResNet50_TA(num_classes, **kwargs):
-    return SE_ResNet(
-        num_classes,
-        net_type="senet50",
-        aggregation_type="ta",
-        is_baseline=True,
-        **kwargs
-    )
-
-
-def SE_ResNet50_RNN(num_classes, **kwargs):
-    return SE_ResNet(
-        num_classes,
-        net_type="senet50",
-        aggregation_type="rnn",
-        is_baseline=True,
-        **kwargs
-    )
-
-
-# all mutual correlation attention models
+# all attention models
 def SE_ResNet50_COSAM45_TP(num_classes, **kwargs):
     return SE_ResNet(
         num_classes,
