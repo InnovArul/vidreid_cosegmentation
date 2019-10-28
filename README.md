@@ -14,7 +14,7 @@ We would like to thank <a href="https://github.com/jiyanggao" target="_blank">ji
 
 ## Datasets
 
-Dataset preparation instructions can be found in the source repositories. For completeness, I have compiled the dataset instructions <a href="./DATASETS.md" target="_blank">here</a>.
+Dataset preparation instructions can be found in the repositories <a href="https://github.com/jiyanggao/Video-Person-ReID" target="_blank">Video-Person-ReID</a> and <a href="https://github.com/KaiyangZhou/deep-person-reid" target="_blank">deep-person-reid</a>. For completeness, I have compiled the dataset instructions <a href="./DATASETS.md" target="_blank">here</a>.
 
 ## Training
 
