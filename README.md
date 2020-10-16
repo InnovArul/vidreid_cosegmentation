@@ -18,8 +18,11 @@ Dataset preparation instructions can be found in the repositories <a href="https
 
 ## Training
 
-Will be updated soon.
+`python main_video_person_reid.py -a resnet50_cosam45_tp -d <dataset> --gpu-devices <gpu_index>`
+
+`<dataset>` can be `mars` or `dukemtmcvidreid`
 
 ## Testing
 
-Will be updated soon.
+`python main_video_person_reid.py -a resnet50_cosam45_tp -d <dataset> --gpu-devices <gpu_index> --evaluate --pretrained-model <model_path>`
+
